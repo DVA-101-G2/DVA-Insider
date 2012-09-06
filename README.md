@@ -1,6 +1,6 @@
 ﻿DVA Insider
 ===================
-En community sida för datavetenskapliga programmet som ska stärka förhållandet mellan elever och företag.
+En community sida för datavetenskapliga programmet som ska stärka förhållandet mellan elever och näringslivet.
 
 Använder
 --------------------
