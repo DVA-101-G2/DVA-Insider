@@ -71,6 +71,7 @@
   <exec executable="phpcs" output="/dev/null">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+   <arg value="--ignore=application/config/*,application/errors/*,application/views/*" />
    <arg value="--standard=CodeIgniter" />
    <arg path="${basedir}/src/" />
   </exec>
