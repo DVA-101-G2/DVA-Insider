@@ -18,6 +18,6 @@ Beta: http://beta.dvainsider.saerix.com
 
 Produktion: http://dvainsider.saerix.com
 
-Installlation
+Installation
 --------------------
 Src måste kompliteras med http://www.saerix.com/dump/dvai-base.zip för att kunna köras.
