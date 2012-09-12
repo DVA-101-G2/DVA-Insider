@@ -2,16 +2,13 @@
 
 <project name="DVA-Insider" default="build">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpcs-ci,phpcpd,phpcb,phpdox"/>
+   depends="prepare,lint,phploc,phpcs-ci,phpcpd,phpcb,phpdox"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel,phpcb"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
-   <sequential>
-    <antcall target="pdepend"/>
-   </sequential>
    <antcall target="phpcpd"/>
    <antcall target="phpcs-ci"/>
    <antcall target="phploc"/>
@@ -46,23 +43,6 @@
   <exec executable="phploc">
    <arg value="--log-csv" />
    <arg value="${basedir}/build/logs/phploc.csv" />
-   <arg path="${basedir}/src/application" />
-  </exec>
- </target>
-
- <target name="pdepend" description="Calculate software metrics using PHP_Depend">
-  <exec executable="pdepend">
-   <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
-   <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
-   <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-   <arg path="${basedir}/src/application" />
-  </exec>
- </target>
-
- <target name="phpcs"
-         description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-  <exec executable="phpcs">
-   <arg value="--standard=${basedir}/build/phpcs.xml" />
    <arg path="${basedir}/src/application" />
   </exec>
  </target>
