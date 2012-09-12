@@ -1,4 +1,4 @@
-﻿DVA Insider
+DVA Insider
 ===================
 En community sida för datavetenskapliga programmet som ska stärka förhållandet mellan elever och näringslivet.
 
@@ -9,3 +9,15 @@ Använder
 * JQuery
 
 All dokumentation sker på svenska.
+
+Continuous Integration
+--------------------
+http://ci.saerix.com/job/DVA%20Insider/
+
+Beta: http://beta.dvainsider.saerix.com
+
+Produktion: http://dvainsider.saerix.com
+
+Installlation
+--------------------
+Src måste kompliteras med http://www.saerix.com/dump/dvai-base.zip för att kunna köras.
