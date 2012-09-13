@@ -12,7 +12,7 @@ All dokumentation sker på svenska.
 
 Continuous Integration
 --------------------
-http://ci.saerix.com/job/DVA%20Insider/
+http://ci.saerix.com/job/DVA_Insider/
 
 Beta: http://beta.dvainsider.saerix.com
 
