@@ -19,6 +19,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		//Migration
+		$this->load->library('migration');
+		$this->migration->latest();
+		
 		$this->load->view('welcome_message');
 	}
 }
