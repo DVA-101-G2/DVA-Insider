@@ -4,7 +4,7 @@ En community sida för datavetenskapliga programmet som ska stärka förhålland
 
 Product Backlog: https://docs.google.com/spreadsheet/ccc?key=0ApBpTcNZN1rNdFJ2ZkV5NHJMMDVYdzFiUEtwZnpwRmc&pli=1
 
-Splint Backlog: https://trello.com/board/dva-insider/506bf2754ae3c49354012689
+Sprint Backlog: https://trello.com/board/dva-insider/506bf2754ae3c49354012689
 
 Använder
 --------------------
