@@ -11,11 +11,28 @@ class Migration_Usertables extends CI_Migration {
 				'unsigned' => TRUE,
 				'auto_increment' => TRUE
 			),
+			'user_type' => array(
+				'type' => 'TINYINT',
+				'constraint' => 1,
+				'unsigned' => TRUE
+			),
 			'user_email' => array(
 				'type' => 'VARCHAR',
 				'constraint' => 100
 			),
+			'user_email_authentication' => array(
+				'type' => 'VARCHAR',
+				'constraint' => 100
+			),
+			'user_email_authentication_key' => array(
+				'type' => 'VARCHAR',
+				'constraint' => 100
+			),
 			'user_password' => array(
+				'type' => 'VARCHAR',
+				'constraint' => 100
+			),
+			'user_password_salt' => array(
 				'type' => 'VARCHAR',
 				'constraint' => 100
 			),
@@ -33,18 +50,16 @@ class Migration_Usertables extends CI_Migration {
 			),
 			'user_registered' => array(
 				'type' => 'INT',
-				'constraint' => 11,
-				'unsigned' => TRUE,
+				'constraint' => 11
 			),
 			'user_last_login' => array(
 				'type' => 'INT',
-				'constraint' => 11,
-				'unsigned' => TRUE,
+				'constraint' => 11
 			),
 			'user_online' => array(
 				'type' => 'TINYINT',
 				'constraint' => 1,
-				'unsigned' => TRUE,
+				'unsigned' => TRUE
 			),
 			'user_image' => array(
 				'type' => 'BLOB',
@@ -75,8 +90,7 @@ class Migration_Usertables extends CI_Migration {
 			),
 			'activity_timestamp' => array(
 				'type' => 'INT',
-				'constraint' => 11,
-				'unsigned' => TRUE,
+				'constraint' => 11
 			),
 			'activity_data' => array(
 				'type' => 'TEXT',
