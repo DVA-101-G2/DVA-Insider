@@ -18,7 +18,8 @@ class Migration_Usertables extends CI_Migration {
 			),
 			'user_email' => array(
 				'type' => 'VARCHAR',
-				'constraint' => 100
+				'constraint' => 100,
+				'null' => TRUE,
 			),
 			'user_email_authentication' => array(
 				'type' => 'VARCHAR',
@@ -30,11 +31,7 @@ class Migration_Usertables extends CI_Migration {
 			),
 			'user_password' => array(
 				'type' => 'VARCHAR',
-				'constraint' => 100
-			),
-			'user_password_salt' => array(
-				'type' => 'VARCHAR',
-				'constraint' => 100
+				'constraint' => 250
 			),
 			'user_ranks' => array(
 				'type' => 'VARCHAR',
