@@ -14,16 +14,6 @@ class Usermodel extends CI_Model {
 		define("ACTIVITY_PAGE_LOAD", "page_load");
 	}
 	
-	//Genererar random strings, skulle kunna flyttas om den behövs på flera ställen.
-	private function generate_random_string($length) {
-		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$randomString = '';
-		for ($i = 0; $i < $length; $i++) {
-			$randomString .= $characters[rand(0, strlen($characters) - 1)];
-		}
-		return $randomString;
-	}
-	
 	/**
 	 * Denna metod används för att hämta information om en specifik användare.<br>
 	 * Exempel: get_user()->user_email evalueras till användares email.
@@ -70,9 +60,9 @@ class Usermodel extends CI_Model {
 			
 		if(array_key_exists('user_ranks', $fields))
 			$fields['user_ranks'] = $this->implode_ranks($fields['user_ranks']);
-			
+		
 		if(array_key_exists('user_password', $fields))
-			$fields['user_password'] = crypt($fields['user_password'], $salt.$this->generate_random_string(22));
+			$fields['user_password'] = crypt($fields['user_password'], $salt.random_string('alnum', 22));
 		
 		$this->db->where('user_id', $userid);
 		$this->db->update('users', $fields);
@@ -88,10 +78,10 @@ class Usermodel extends CI_Model {
 	 * @return array Allting som fanns i $fields, user_email_authentication_key och user_id
 	 */	
 	public function register($email, $password, $fields) {
-		$fields['user_password'] = crypt($password, $this->salt.$this->generate_random_string(22));
+		$fields['user_password'] = crypt($password, $salt.random_string('alnum', 22));
 		$fields['user_email_authentication'] = $email;
 		$fields['user_email'] = null;
-		$fields['user_email_authentication_key'] = $this->generate_random_string(22);
+		$fields['user_email_authentication_key'] = random_string('alnum', 16);
 		$fields['user_registered'] = time();
 		$fields['user_id'] = $this->add_user($fields);
 		unset($fields['user_password']);

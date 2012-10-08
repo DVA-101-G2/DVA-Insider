@@ -25,8 +25,8 @@ class User extends CI_Controller {
 				$this->input->post('email'),
 				$this->input->post('password'),
 				array(
-					'user_firstname' => htmlentities($this->input->post('firstname')),
-					'user_surname' => htmlentities($this->input->post('surname'))
+					'user_firstname' => htmlentities($this->input->post('firstname'), ENT_COMPAT | ENT_HTML401, "UTF-8"),
+					'user_surname' => htmlentities($this->input->post('surname'), ENT_COMPAT | ENT_HTML401, "UTF-8")
 				)
 			);
 			$this->load->library('email', array('mailtype' => 'html'));
