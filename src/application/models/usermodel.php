@@ -93,7 +93,7 @@ class Usermodel extends CI_Model {
 		$fields['user_email'] = null;
 		$fields['user_email_authentication_key'] = $this->generate_random_string(22);
 		$fields['user_registered'] = time();
-		$fields['user_id'] = add_user($fields);
+		$fields['user_id'] = $this->add_user($fields);
 		unset($fields['user_password']);
 		return $fields;
 	}
