@@ -14,8 +14,8 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('email', 'E-postadress', 'required|valid_email|is_unique[users.user_email]');
 		$this->form_validation->set_rules('password', 'Lösenord', 'required|min_length[5]|max_length[18]|matches[passconf]');
 		$this->form_validation->set_rules('passconf', 'Bekräfta Lösenord', 'required');
-		$this->form_validation->set_rules('firstname', 'Förnamn', 'required|alpha|max_length[25]');
-		$this->form_validation->set_rules('surname', 'Efternamn', 'required|alpha|max_length[25]');
+		$this->form_validation->set_rules('firstname', 'Förnamn', 'required|max_length[25]');
+		$this->form_validation->set_rules('surname', 'Efternamn', 'required|max_length[25]');
 		
 		if (!$this->form_validation->run()) {
 			$this->load->view('user/register');
@@ -25,11 +25,11 @@ class User extends CI_Controller {
 				$this->input->post('email'),
 				$this->input->post('password'),
 				array(
-					'user_firstname' => $this->input->post('firstname'),
-					'user_surname' => $this->input->post('surname')
+					'user_firstname' => htmlentities($this->input->post('firstname')),
+					'user_surname' => htmlentities($this->input->post('surname'))
 				)
 			);
-			$this->load->library('email');
+			$this->load->library('email', array('mailtype' => 'html'));
 			$this->email->from('noreply@dvainsider.se');
 			$this->email->to($this->input->post('email')); 
 			$this->email->subject('Verifikation av epostaddress');
