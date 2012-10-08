@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 class Usermodel extends CI_Model {
 	var $userid;
 	var $salt = '$2a$07$';

@@ -1,4 +1,4 @@
-﻿<?php echo validation_errors(); ?><br />
+<?php echo validation_errors(); ?><br />
 <?php echo form_open('user/register'); ?>
 E-postadress: <input type="text" name="email" /><br />
 Lösenord: <input type="password" name="password" /><br />
