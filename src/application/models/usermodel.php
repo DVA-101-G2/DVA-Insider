@@ -62,7 +62,7 @@ class Usermodel extends CI_Model {
 			$fields['user_ranks'] = $this->implode_ranks($fields['user_ranks']);
 		
 		if(array_key_exists('user_password', $fields))
-			$fields['user_password'] = crypt($fields['user_password'], $salt.random_string('alnum', 22));
+			$fields['user_password'] = crypt($fields['user_password'], $this->salt.random_string('alnum', 22));
 		
 		$this->db->where('user_id', $userid);
 		$this->db->update('users', $fields);
@@ -78,7 +78,7 @@ class Usermodel extends CI_Model {
 	 * @return array Allting som fanns i $fields, user_email_authentication_key och user_id
 	 */	
 	public function register($email, $password, $fields) {
-		$fields['user_password'] = crypt($password, $salt.random_string('alnum', 22));
+		$fields['user_password'] = crypt($password, $this->salt.random_string('alnum', 22));
 		$fields['user_email_authentication'] = $email;
 		$fields['user_email'] = null;
 		$fields['user_email_authentication_key'] = random_string('alnum', 16);
