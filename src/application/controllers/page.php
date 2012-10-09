@@ -7,7 +7,9 @@ class Page extends CI_Controller {
 		$this->load->library('migration');
 		$this->migration->latest();
 		
+		$this->load->view('header');
 		$this->load->view('page/start');
+		$this->load->view('footer');
 	}
 }
 
