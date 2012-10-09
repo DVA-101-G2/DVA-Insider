@@ -40,10 +40,31 @@ class User extends CI_Controller {
 		}
 	}
 	
+	public function login() {
+		$this->load->helper('form');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+		if(!$email OR !$password) {
+			$this->load->view('user/login');
+		}
+		elseif($user = $this->usermodel->login($email, $password)) {
+			$this->session->set_userdata('user_id', $user->user_id);
+			redirect('');
+		}
+		else {
+			echo "Fel epostadress eller lösenord, försök igen";
+		}
+	}
+	
+	public function logout() {
+		$this->session->sess_destroy();
+		redirect('');
+	}
+	
 	public function email_authentication() {
 		$userid = $this->uri->segment(3);
 		$verifycode = $this->uri->segment(4);
-		if(!$userid || !$verifycode) {
+		if(!$userid OR !$verifycode) {
 			show_404();
 			return;
 		}

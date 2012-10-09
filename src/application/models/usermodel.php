@@ -81,7 +81,7 @@ class Usermodel extends CI_Model {
 		$fields['user_password'] = crypt($password, $this->salt.random_string('alnum', 22));
 		$fields['user_email_authentication'] = $email;
 		$fields['user_email'] = null;
-		$fields['user_email_authentication_key'] = random_string('alnum', 16);
+		$fields['user_email_authentication_key'] = strtoupper(random_string('alnum', 10));
 		$fields['user_registered'] = time();
 		$fields['user_id'] = $this->add_user($fields);
 		unset($fields['user_password']);
