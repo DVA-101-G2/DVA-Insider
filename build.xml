@@ -47,16 +47,6 @@
   </exec>
  </target>
 
- <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-  <exec executable="phpcs" output="/dev/null">
-   <arg value="--report=checkstyle" />
-   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-   <arg value="--ignore=application/config/*,application/errors/*,application/views/*" />
-   <arg value="--standard=CodeIgniter" />
-   <arg path="${basedir}/src/" />
-  </exec>
- </target>
-
  <target name="phpcpd" description="Find duplicate code using PHPCPD">
   <exec executable="phpcpd">
    <arg value="--log-pmd" />
