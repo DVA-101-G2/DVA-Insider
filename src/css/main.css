@@ -302,7 +302,8 @@ header .inner-header .links li.active {
 }
 
 #popup .container {
-	width:500px;
+	width:600px;
+	min-height:500px;
 	margin:auto;
 	background-color:#EBEBEB;
 	margin-top:30px;

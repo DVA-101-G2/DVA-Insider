@@ -25,6 +25,7 @@ $(function() {
 	calcPopup();
 	
 	var popupurl = '';
+	//Öppnar en popup
 	function openPopup(title, url) {
 		$('#popup').show();
 		$('#popup .header').html(title);
@@ -32,36 +33,37 @@ $(function() {
 			popupurl = url;
 			$.get(popupurl, function(data) {
 				$('#popup .container .content').html(data);
-				register();
+				registerPopupContent();
 			});
 		}
 	}
-	$('#popup .close').click(function() {
+	
+	//Stäng popup
+	function closePopup() {
 		$('#popup').hide();
+	}
+	$('#popup .close').click(function() {
+		closePopup();
+	});
+	$('#popup').click(function(e) {
+		if(e.target != this) return;
+		closePopup();
 	});
 	
-	function register() {
+	//Eftersom jquery registerar bara elementen som finns i DOM i läget den körs så måste man om registera vaje gång en popup laddas om.
+	function registerPopupContent() {
 		$("#popup .container form").submit(function () { return false; });
 		$('#popup .container form :submit').click(function() {
 			$('#popup .container form :submit').loadingButton();
 			$.post(popupurl, $('#popup .container form').serialize() ,function(data) {
 				$('#popup .container .content').html(data);
-				register();
+				registerPopupContent();
 			});
 		});
-		
-		
-		
 	}
-	register();
-	
+	//Regga länkar som kan öppna popups
 	$('a.popup').click(function(e) {
 		e.preventDefault();
 		openPopup($(this).attr('title'), $(this).attr('href'));
-	});
-	
-	$('#popup').click(function(e) {
-		if(e.target != this) return;
-		$(this).hide();
 	});
 });
