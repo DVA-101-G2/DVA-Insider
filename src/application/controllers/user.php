@@ -17,6 +17,15 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('firstname', 'Förnamn', 'required|max_length[25]');
 		$this->form_validation->set_rules('surname', 'Efternamn', 'required|max_length[25]');
 		
+		$this->form_validation->set_error_delimiters('', '');
+		
+		$this->form_validation->set_message('required', 'Detta fält måste fyllas i.');
+		$this->form_validation->set_message('valid_email', 'Detta fält måste innehålla en giltig e-postadress.');
+		$this->form_validation->set_message('is_unique', 'E-postadressen är redan registrerad, för mer information kontakta support@dvainsider.se.');
+		$this->form_validation->set_message('min_length', '<!-- %s -->Detta fält måste vara längre än %s.');
+		$this->form_validation->set_message('max_length', '<!-- %s -->Detta fält får inte vara längre än %s.');
+		$this->form_validation->set_message('matches', 'Lösenorden matchar inte.');
+		
 		if (!$this->form_validation->run()) {
 			$this->load->view('user/register');
 		}
@@ -36,7 +45,7 @@ class User extends CI_Controller {
 			$this->email->message($this->load->view('user/email_authentication', $fields, true));	
 			$this->email->send();
 			
-			echo "Registering gjordes och ett e-postmeddelande har skickats till den angivna e-postadressen med instuktioner om hur du slutför registeringen.";
+			$this->load->view('user/register_success');
 		}
 	}
 	

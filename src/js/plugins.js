@@ -12,3 +12,14 @@ if (!(window.console && console.log)) {
 }
 
 // Place any jQuery/helper plugins in here.
+(function( $ ) {
+  $.fn.loadingButton = function() {
+	img = $('<img src="/img/loading.gif" />');
+	di = this.height();
+	o = new Object();
+	o.left = di;
+	o.top = -2;
+	img.height(di).css('margin-left', '4px').css('position', 'relative').css('margin', (di*-1/2)+'px').offset(o);
+	this.append(img).addClass('hovered').attr("disabled", true);
+  };
+})( jQuery );

@@ -292,6 +292,86 @@ header .inner-header .links li.active {
     border-bottom: 2px solid #dddddd;
 }
 
+/*
+ * Popup
+ */
+#popup {
+	position: absolute;
+	z-index:100;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#popup .container {
+	width:500px;
+	margin:auto;
+	background-color:#EBEBEB;
+	margin-top:30px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:20px;
+}
+/*
+ * Popup form
+ */
+#popup input[type=text], #popup input[type=password] {
+	width:250px;
+	padding: 1px 5px;
+	display:block;
+	border: 1px solid #999;
+	height: 25px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+#popup .close {
+	background-image:url(/img/glyphicons/remove.png);
+	width:26px;
+	height:26px;
+	cursor:pointer;
+	float:right;
+}
+
+#popup .header {
+	font-family:Verdana;
+	font-size:2em;
+}
+
+#popup  textarea, #popup textarea {
+	padding: 1px 5px;
+	display:block;
+	border: 1px solid #999;
+	height: 25px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+#popup  label {
+	font-style:italic;
+	font-family:Verdana;
+}
+
+#popup div.error {
+	color:red;
+	margin: 5px 0px 10px -4px;
+}
+
+button {
+	color:white;
+	background-color:#555;
+	padding:5px 5px;
+	font-family:Verdana;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:none;
+}
+
+button:hover, button.hovered {
+	background-color:#777;
+}
+
+
 
 /*
  * footer

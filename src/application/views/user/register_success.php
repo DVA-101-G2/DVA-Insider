@@ -1,0 +1,1 @@
+Registeringen gjordes och ett e-postmeddelande har skickats till den angivna e-postadressen med instuktioner om hur du slutför registeringen.
