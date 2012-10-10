@@ -22,8 +22,8 @@ class User extends CI_Controller {
 		$this->form_validation->set_message('required', 'Detta fält måste fyllas i.');
 		$this->form_validation->set_message('valid_email', 'Detta fält måste innehålla en giltig e-postadress.');
 		$this->form_validation->set_message('is_unique', 'E-postadressen är redan registrerad, för mer information kontakta support@dvainsider.se.');
-		$this->form_validation->set_message('min_length', '<!-- %s -->Detta fält måste vara längre än %s.');
-		$this->form_validation->set_message('max_length', '<!-- %s -->Detta fält får inte vara längre än %s.');
+		$this->form_validation->set_message('min_length', '<!-- %s -->Detta fält måste vara längre än %s tecken.');
+		$this->form_validation->set_message('max_length', '<!-- %s -->Detta fält får inte vara längre än %s tecken.');
 		$this->form_validation->set_message('matches', 'Lösenorden matchar inte.');
 		
 		if (!$this->form_validation->run()) {
