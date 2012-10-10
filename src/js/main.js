@@ -14,21 +14,11 @@ $(function() {
 	  } 
 	});
 	
-	function calcPopup() {
-		popup = $('#popup');
-		popup.width($(window).width());
-		popup.height($(window).height());
-	}
-	$(window).resize(function() {
-		calcPopup();
-	});
-	calcPopup();
-	
 	var popupurl = '';
 	//Öppnar en popup
 	function openPopup(title, url) {
 		$('#popup').show();
-		$('#popup .header').html(title);
+		$('#popup .header span').html(title);
 		if(popupurl != url) {
 			popupurl = url;
 			$.get(popupurl, function(data) {

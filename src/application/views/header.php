@@ -19,9 +19,7 @@
     <body>
 		<div id="popup" style="display:none;">
 			<div class="container">
-				<div class="close"></div>
-				<div class="header"></div>
-				<br />
+				<div class="header"><span></span><div class="close"></div></div>
 				<div class="content"><img src="<?php echo base_url(); ?>img/loading.gif" alt="loading" /></div>
 			</div>
 		</div>
