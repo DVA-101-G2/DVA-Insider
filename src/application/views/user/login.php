@@ -7,15 +7,13 @@ window.location.reload();
 </script>
 Du loggades in!
 <?php else: ?>
+<form action="">
 <table border="0">
 <tr>
 <td>
 <form action="">
 <label for="email">E-postadress</label> <input type="text" name="email" value="<?php echo set_value('email'); ?>" /><br />
 <label for="password">Lösenord</label> <input type="password" name="password" />
-<div class="error">&nbsp;<?php if(isset($error)): ?>Användarnamn eller lösenord var fel, försök igen<?php endif; ?></div>
-<button type="submit">Logga in</button>
-</form>
 </td>
 <td style="width:20px;"></td>
 <td style="vertical-align:top;">
@@ -24,4 +22,7 @@ Inte registrerad ännu? Du kan registera dig genom att trycka på registrera ned
 </td>
 </tr>
 </table>
+<div class="error">&nbsp;<?php if(isset($error)): ?>Användarnamn eller lösenord var fel, försök igen<?php endif; ?></div>
+<button type="submit">Logga in</button>
+</form>
 <?php endif; ?>
