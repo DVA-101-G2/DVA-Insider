@@ -49,6 +49,15 @@ class User extends CI_Controller {
 		}
 	}
 	
+	public function image() {
+		$userid = $this->uri->segment(3);
+		if(!($userimage = $this->usermodel->get_user_image($userid))) {
+			show_404();
+			return;
+		}
+		$this->output->set_content_type('image/png')->set_output($userimage);
+	}
+	
 	public function login() {
 		$this->load->helper('form');
 		$email = $this->input->post('email');
@@ -58,10 +67,12 @@ class User extends CI_Controller {
 		}
 		elseif($user = $this->usermodel->login($email, $password)) {
 			$this->session->set_userdata('user_id', $user->user_id);
-			redirect('');
+			$data['success'] = true;
+			$this->load->view('user/login', $data);
 		}
 		else {
-			echo "Fel epostadress eller lösenord, försök igen";
+			$data['error'] = true;
+			$this->load->view('user/login', $data);
 		}
 	}
 	

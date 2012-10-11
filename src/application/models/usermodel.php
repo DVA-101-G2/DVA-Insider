@@ -2,6 +2,17 @@
 class Usermodel extends CI_Model {
 	var $userid;
 	var $salt = '$2a$07$';
+	var $select = array(
+		'user_id',
+		'user_type',
+		'user_email',
+		'user_ranks',
+		'user_firstname',
+		'user_surname',
+		'user_registered',
+		'user_last_login',
+		'user_online'
+	);
 	
 	public function Usermodel() {
 		parent::__construct();
@@ -29,6 +40,7 @@ class Usermodel extends CI_Model {
 			return false;
 			
 		$this->db->where('user_id', $userid);
+		$this->db->select($this->select);
 		$query = $this->db->get('users');
 		
 		
@@ -39,9 +51,24 @@ class Usermodel extends CI_Model {
 		
 		$user->user_ranks = $this->explode_ranks($user->user_ranks);
 		
-		unset($user->user_password); //Password behövs inte skickas med här.
-		
 		return $user;
+	}
+	
+	public function get_user_image($userid = null) {
+		if($userid == null)
+			$userid = $this->userid;
+		
+		if(!$userid || !is_numeric($userid))
+			return false;
+		
+		$this->db->where('user_id', $userid);
+		$this->db->select('user_image');
+		$query = $this->db->get('users');
+		
+		if($query->num_rows == 0)
+			return false;
+		
+		return $query->row()->user_image;
 	}
 	
 	/**
@@ -155,6 +182,7 @@ class Usermodel extends CI_Model {
 	public function verify_email($userid, $verifycode) {
 		$this->db->where('user_id', $userid);
 		$this->db->where('user_email_authentication_key', $verifycode);
+		$this->db->select('user_email_authentication');
 		$query = $this->db->get('users');
 		if($query->num_rows == 0)
 			return false;
@@ -178,6 +206,7 @@ class Usermodel extends CI_Model {
 	 * @return stdclass|bool Användardata (precis som get_user()) om inloggningen var korrekt, annars false
 	 */
 	public function login($email, $password) {
+		$this->db->select(array_merge($this->select, array('user_password')));
 		$this->db->where('user_email', $email);
 		$query = $this->db->get('users');
 		

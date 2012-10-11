@@ -168,6 +168,24 @@ header .inner-header .links li.active {
 }
 
 /*
+ * menu login
+ */
+header .inner-header .links li.login {
+	
+}
+
+header .inner-header .links li.login div.header {
+
+}
+
+header .inner-header .links li.login div.header img.image{
+	width:40px;
+	height:40px;
+	border:1px solid #646666;
+}
+ 
+ 
+/*
  * Fixed header
  */
 
@@ -292,6 +310,7 @@ header .inner-header .links li.active {
     border-bottom: 2px solid #dddddd;
 }
 
+
 /*
  * Popup
  */
@@ -301,6 +320,7 @@ header .inner-header .links li.active {
 	position: absolute;
 	z-index:100;
 	background: rgba(0, 0, 0, 0.7);
+	font-family: Verdana;
 }
 
 #popup .container {
@@ -385,7 +405,7 @@ header .inner-header .links li.active {
 	margin: 5px 0px 5px -4px;
 }
 
-button {
+button, a.button {
 	color:white;
 	background-color:#555;
 	padding:5px 5px;
@@ -393,9 +413,10 @@ button {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	border:none;
+	text-decoration:none;
 }
 
-button:hover, button.hovered {
+button:hover, button.hovered, a.button:hover, a.button.hovered {
 	background-color:#777;
 }
 

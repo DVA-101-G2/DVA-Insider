@@ -23,6 +23,7 @@
 				<div class="content"><img src="<?php echo base_url(); ?>img/loading.gif" alt="loading" /></div>
 			</div>
 		</div>
+		
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -50,6 +51,13 @@
                             <li onclick="location.href='#'">
                                 <i class="icon-example"></i>
                                 Menyval #3
+                            </li>
+							<li class="login" onclick="openPopup('Logga in', '<?php echo site_url('/user/login'); ?>');">
+								<?php if($user = $this->usermodel->get_user()): ?>
+								<div class="header"><img src="<?php echo site_url('/user/image/'.$user->user_id); ?>" class="image" /> <?php echo $user->user_firstname; ?> <?php echo $user->user_surname; ?></div>
+								<?php else: ?>
+								<span>Logga in</span>
+								<?php endif; ?>
                             </li>
                         </ul>
                     </div> <!-- end of links -->
