@@ -20,9 +20,11 @@ $(function() {
 		$('#popup').show();
 		$('#popup .header span').html(title);
 		if(popupurl != url) {
+			$('#popup .content').empty();
+			$('#popup .content').append($('<img />').attr('src', '/img/loading.gif').addClass('loading'));
 			popupurl = url;
 			$.get(popupurl, function(data) {
-				$('#popup .container .content').html(data);
+				$('#popup .content').html(data);
 				registerPopupContent();
 			});
 		}
