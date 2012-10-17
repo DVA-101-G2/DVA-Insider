@@ -4,7 +4,9 @@ class User extends CI_Controller {
 	
 	
 	public function index() {
-		//Troligtvis kan vi ha användarprofilen här så vi kan använda /user/<id_nummer> här
+		$this->load->view('header');
+		$this->load->view('user/profile');
+		$this->load->view('footer');
 	}
 	
 	public function register() {
