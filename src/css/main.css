@@ -275,6 +275,7 @@ header .inner-header .links li.login div.header img.image{
 
 .wrapper {
     min-height: 100%;
+    
 }
 
 .wrapper .main {
@@ -434,7 +435,8 @@ footer {
     width: 100%;
     clear:both;
 
-    background-color: white;
+
+    
     border-top: 1px solid #a4a4a4;
 
     -webkit-box-shadow: 0px -1px 1px white;
@@ -646,4 +648,158 @@ body:before {
     h3 {
         page-break-after: avoid;
     }
+}
+
+/*page styles */
+#BoxOverblick{
+    border-color: black;
+    border-radius: 10px;
+    padding: 0px;
+    background-color: #000000;
+    width: 1170px;
+    height: 200px;
+    opacity: 0.75;
+    
+
+}
+#innerpicOverblick{
+    float:left;
+    top: 5px;
+    width: 200px;
+    height: 200px;
+    margin-left: 6px;
+    margin-top: 6px;
+    
+}
+
+#innerOverblickname{
+    color: white;
+    margin-top: 6px;
+    float: left;
+    font-size: 32px;
+    margin-left: -300px;
+
+}
+#Overblickinfo{
+    color:black;
+    width:300px;
+    height: 140px;
+    background-color: #000000;
+    z-index: 9002;
+    margin-top: 54px;
+    opacity: 0.75;
+    float: left;
+    border-radius: 10px;
+
+}
+    #Overblickinfo ul{
+    
+list-style-type: none;
+margin:0;
+padding: 0;
+border:0;
+
+}
+
+    #Overblickinfo li{
+
+color: black;
+border: 1px solid gray;
+border-style: outset;
+margin: 2px;
+padding: 5px;
+border-radius: 5px;
+border-width: 2px;
+background-color: white;
+}
+
+#innerOverblickLink1{
+    height: 30px;
+    width: 30px;
+    margin-right: 6px;
+    margin-top: 6px;
+    float:right;   
+    border:2px solid gray;  
+    background-image: url(/img/Untitled2.png);
+}
+#innerOverblickLink2{
+   
+    height: 30px;
+    width: 30px;
+    margin-right: 6px;
+    margin-top: 6px;
+    float:right;
+    border:2px solid gray;
+    background-image: url(/img/Untitled.png);
+
+}
+
+#BoxSenAktiv{
+    margin-top: 6px;
+    border-color: gray;
+    border-radius: 10px;
+    padding: 0px;
+    background-color: #3C3C3C;
+    width: 300px;
+    height: 200px;
+    float: right;
+
+}
+
+#innercontainerSen{
+    margin-left: 12px;
+    margin-top:76px;
+   
+    opacity: 0.8;
+    border-radius:2px ;
+    width:275px;
+    height:0px;
+    z-index: 9002;
+    padding: 0px;
+    background-color:white;
+
+}
+
+#innercontainerSenHeader{
+    margin-top:6px;
+    margin-left: 12px;
+    float:left;
+    width:275px;
+    height: 64px;/*Ska vara 64*/
+    background-image: url(/img/SenasteAktivitet.png);
+    
+}
+/*Flöde*/
+
+#Flodet{
+
+    width: 275px;   
+    
+    padding: 2px;
+    z-index: 9003;
+    background-color: #3C3C3C;    
+    float:top;
+    margin-top: 1px;
+
+}
+
+#Flodet ul{
+    
+list-style-type: none;
+margin:0;
+padding: 0;
+border:0;
+
+}
+
+#Flodet li{
+
+color: black;
+border: 1px solid gray;
+border-style: outset;
+margin: 2px;
+padding: 5px;
+border-radius: 5px;
+border-width: 2px;
+background-color: white;
 }
