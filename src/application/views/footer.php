@@ -32,6 +32,7 @@
         <!-- end of site or application content here -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+		<script type="text/javascript" src="/tiny_mce/jquery.tinymce.js"></script>
         <script src="/js/plugins.js"></script>
         <script src="/js/main.js"></script>
 

@@ -43,7 +43,6 @@ class Usermodel extends CI_Model {
 		$this->db->select($this->select);
 		$query = $this->db->get('users');
 
-
 		if($query->num_rows == 0)
 			return false;
 
@@ -67,8 +66,15 @@ class Usermodel extends CI_Model {
 
 		if($query->num_rows == 0)
 			return false;
-
-		return $query->row()->user_image;
+			
+		$image = $query->row()->user_image;
+		
+		if(empty($image)) {
+			$h = fopen(APPPATH."views/user/default_user.png", 'r');
+			$image = fread($h, 10000000);
+		}
+		
+		return $image;
 	}
 
 	/**
@@ -362,6 +368,11 @@ class Usermodel extends CI_Model {
 		return $query->result();
 
 	}
-
+	
+	//Widgets
+	public function get_all_widgets($user_id) {
+		$this->load->model('widgetmodel');
+		return $this->widgetmodel->get_all_widgets('user', $user_id);
+	}
 
 }

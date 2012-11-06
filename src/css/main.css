@@ -479,6 +479,47 @@ button:hover, button.hovered, a.button:hover, a.button.hovered {
 	background-color:#777;
 }
 
+*
+ * widget
+ */
+ 
+.widgets {
+
+}
+
+.widgets.owner .widget:hover {
+	cursor:move;
+	background-color:#BBBBBB;
+}
+
+.widget {
+	padding:5px 15px;
+	border-radius: 5px;
+}
+
+.widget .actions {
+	float:right;
+	margin-bottom:-21px;
+}
+
+.widget .config, .widget .delete {
+	float:right;
+	cursor:pointer;
+}
+
+.widget .delete {
+	margin-top:2px;
+	background-image:url(/img/glyphicons/remove2.png);
+	width:18px;
+	height:18px;
+}
+
+.widget .config {
+	background-image:url(/img/glyphicons/edit.png);
+	width:24px;
+	height:21px;
+	margin-right:10px;
+}
 
 
 /*
@@ -727,6 +768,10 @@ body:before {
 }
 
 /*page styles */
+.BoxContent {
+float:left;
+width:70%;
+}
 #BoxOverblick{
     border-color: black;
     border-radius: 10px;

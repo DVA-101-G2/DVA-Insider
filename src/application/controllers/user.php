@@ -2,11 +2,43 @@
 
 class User extends CI_Controller {
 	
-	
 	public function index() {
+	
+	}
+	
+	public function profile() {
+		$id = $this->uri->segment(2);
+		if($id == false || !is_numeric($id)) {
+			show_404();
+			return;
+		}
+		$user = $this->usermodel->get_user($id);
+		if(!$user) {
+			show_404();
+			return;
+		}
 		$this->load->view('header');
-		$this->load->view('user/profile');
+		$this->load->view('user/profile', array('user' => $user, 'widgets' => $this->usermodel->get_all_widgets($id)));
 		$this->load->view('footer');
+	}
+	
+	public function widget() {
+		$name = $this->uri->segment(3);
+		$method = $this->uri->segment(4);
+		if(!$name) {
+			show_404();
+			return;
+		}
+		$path = 'widgets/User_'.$name;
+		if(!$method)
+			$method = 'get';
+			
+		$this->load->library($path);
+		$lib =& $this->{'user_'.$name};
+		if(is_callable(array($lib, $method)))
+			$lib->{$method}();
+		else
+			show_404();
 	}
 	
 	public function register() {
@@ -57,6 +89,7 @@ class User extends CI_Controller {
 			show_404();
 			return;
 		}
+		
 		$this->output->set_content_type('image/png')->set_output($userimage);
 	}
 	
