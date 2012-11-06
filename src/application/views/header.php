@@ -23,7 +23,7 @@
 				<div class="content"><img src="<?php echo base_url(); ?>img/loading.gif" alt="loading" /></div>
 			</div>
 		</div>
-		
+
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -34,28 +34,33 @@
             <header>
                 <div class="inner-header">
                     <div class="logotype">
-                        logotypen goes here!
                     </div>
                     <div class="links">
                         <ul>
-                            <li onclick="location.href='#'" class="active">
-                                <i class="icon-example"></i>
-                                Menyval #1
+                            <li onclick="location.href='/'" class="active">
+                                <i class="icon-home"></i>
+                                Start
+                            </li>
+
+                            <li onclick="location.href='/user'">
+                                <i class="icon-users"></i>
+                                Användare
                             </li>
 
                             <li onclick="location.href='#'">
-                                <i class="icon-example"></i>
-                                Menyval #2
+                                <i class="icon-projects"></i>
+                                Projekt
                             </li>
 
                             <li onclick="location.href='#'">
-                                <i class="icon-example"></i>
-                                Menyval #3
+                                <i class="icon-search"></i>
+                                Sök
                             </li>
 							<li class="login" onclick="openPopup('Logga in', '<?php echo site_url('/user/login'); ?>');">
 								<?php if($user = $this->usermodel->get_user()): ?>
 								<div class="header"><img src="<?php echo site_url('/user/image/'.$user->user_id); ?>" class="image" /> <?php echo $user->user_firstname; ?> <?php echo $user->user_surname; ?></div>
 								<?php else: ?>
+                                <i class="icon-login"></i>
 								<span>Logga in</span>
 								<?php endif; ?>
                             </li>
@@ -72,13 +77,16 @@
                     <div class="links">
                         <ul>
                             <li onclick="location.href='#'">
-                                menyval #1
+                                Start
                             </li>
                             <li onclick="location.href='#'">
-                                menyval #2
+                                Användare
                             </li>
                             <li onclick="location.href='#'">
-                                menyval #3
+                                Projekt
+                            </li>
+                            <li onclick="location.href='#'">
+                                Sök
                             </li>
                         </ul>
                     </div> <!-- end of links -->

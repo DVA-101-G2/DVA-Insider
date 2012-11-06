@@ -25,7 +25,7 @@ body {
     color: #010101;
 }
 
-html, 
+html,
 body {
     height: 100%;
 }
@@ -126,7 +126,10 @@ header .inner-header .logotype {
     float: left;
     width: 200px;
     height: 135px;
+    background-size: 200px 135px;
+    background-image: url(/img/logo.png);
 }
+
 
 header .inner-header .links {
     float: left;
@@ -171,7 +174,7 @@ header .inner-header .links li.active {
  * menu login
  */
 header .inner-header .links li.login {
-	
+
 }
 
 header .inner-header .links li.login div.header {
@@ -183,8 +186,8 @@ header .inner-header .links li.login div.header img.image{
 	height:40px;
 	border:1px solid #646666;
 }
- 
- 
+
+
 /*
  * Fixed header
  */
@@ -254,6 +257,7 @@ header .inner-header .links li.login div.header img.image{
     cursor: pointer;
 }
 
+
 /*
  * Example menu-icon
  */
@@ -264,18 +268,72 @@ header .inner-header .links li.login div.header img.image{
     height: 25px;
     margin: 0 auto;
     margin-bottom: 5px;
-    background-image: url(/img/glyphicons/glyphicons_001_leaf.png);
+    background-image: url(/img/glyphicons/example.png);
     background-size: 100%;
     background-repeat: no-repeat;
  }
 
+  .links i.icon-home {
+    display: block;
+    width: 27px;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-image: url(/img/glyphicons/home.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+  .links i.icon-login {
+    display: block;
+    width: 27px;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-image: url(/img/glyphicons/login.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+   .links i.icon-users {
+    display: block;
+    width: 27px;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-image: url(/img/glyphicons/users.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+   .links i.icon-search {
+    display: block;
+    width: 27px;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-image: url(/img/glyphicons/search.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
+
+  .links i.icon-projects {
+    display: block;
+    width: 27px;
+    height: 25px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-image: url(/img/glyphicons/projects.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+ }
 /*
  * main content
  */
 
 .wrapper {
     min-height: 100%;
-    
+
 }
 
 .wrapper .main {
@@ -284,7 +342,7 @@ header .inner-header .links li.login div.header img.image{
     width: 1170px;
     margin: 0 auto;
     margin-top: 35px;
-} 
+}
 
 /*
  * boxes
@@ -430,19 +488,27 @@ button:hover, button.hovered, a.button:hover, a.button.hovered {
 footer {
     position: relative;
     margin-top: -150px; /* negative value of footer height */
-
+    background-color: white;
     height: 149px;
     width: 100%;
     clear:both;
 
+    font-size: 11px;
+    color: #cfcfcf;
 
-    
     border-top: 1px solid #a4a4a4;
 
     -webkit-box-shadow: 0px -1px 1px white;
     -moz-box-shadow:    0px -1px 1px white;
     box-shadow:         0px -1px 1px white;
-} 
+}
+
+footer a,
+footer a:visited,
+footer a:hover {
+    text-decoration: none;
+    color: #0c0c0c;
+}
 
 footer .inner-footer {
     width: 1170px;
@@ -450,6 +516,16 @@ footer .inner-footer {
     height: 114px;
     margin-top: 15px;
     margin-bottom: 20px;
+}
+
+footer .text {
+    width: 670px;
+    float: left;
+}
+
+footer .shares {
+    width: 500px;
+    float: left;
 }
 
 /*Opera Fix*/
@@ -659,7 +735,7 @@ body:before {
     width: 1170px;
     height: 200px;
     opacity: 0.75;
-    
+
 
 }
 #innerpicOverblick{
@@ -669,7 +745,7 @@ body:before {
     height: 200px;
     margin-left: 6px;
     margin-top: 6px;
-    
+
 }
 
 #innerOverblickname{
@@ -693,7 +769,7 @@ body:before {
 
 }
     #Overblickinfo ul{
-    
+
 list-style-type: none;
 margin:0;
 padding: 0;
@@ -718,19 +794,26 @@ background-color: white;
     width: 30px;
     margin-right: 6px;
     margin-top: 6px;
-    float:right;   
-    border:2px solid gray;  
-    background-image: url(/img/Untitled2.png);
+    float:right;
+    border:none;
+    background-color: white;
+    background-image: url(/img/facebook.png);
+    background-repeat: none;
+    background-size: 120%;
+    background-position: -2px 0px;
 }
 #innerOverblickLink2{
-   
+
     height: 30px;
     width: 30px;
     margin-right: 6px;
     margin-top: 6px;
     float:right;
-    border:2px solid gray;
-    background-image: url(/img/Untitled.png);
+    border:none;
+    background-color: white;
+    background-image: url(/img/twitter.png);
+    background-repeat: none;
+    background-size: 100%;
 
 }
 
@@ -749,7 +832,7 @@ background-color: white;
 #innercontainerSen{
     margin-left: 12px;
     margin-top:76px;
-   
+
     opacity: 0.8;
     border-radius:2px ;
     width:275px;
@@ -767,24 +850,24 @@ background-color: white;
     width:275px;
     height: 64px;/*Ska vara 64*/
     background-image: url(/img/SenasteAktivitet.png);
-    
+
 }
 /*Flöde*/
 
 #Flodet{
 
-    width: 275px;   
-    
+    width: 275px;
+
     padding: 2px;
     z-index: 9003;
-    background-color: #3C3C3C;    
+    background-color: #3C3C3C;
     float:top;
     margin-top: 1px;
 
 }
 
 #Flodet ul{
-    
+
 list-style-type: none;
 margin:0;
 padding: 0;

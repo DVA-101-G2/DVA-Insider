@@ -1,10 +1,31 @@
            </div> <!-- end main -->
-            
+
         </div> <!-- end wrapper -->
 
         <footer>
             <div class="inner-footer">
-                this is the footer!
+                <div class="text">
+                    <a href="#">Om Projektet</a><br />
+                    <a href="#">Cookies</a><br />
+                    <a href="#">Sitemap</a><br />
+
+                    <br />
+                    Copyright 2012 (c) dva insider.
+                </div>
+                <div class="shares">
+                    <span style="color: #acacac;">Dela denna sida med andra!</span><br />
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                    <a class="addthis_button_preferred_1"></a>
+                    <a class="addthis_button_preferred_2"></a>
+                    <a class="addthis_button_preferred_3"></a>
+                    <a class="addthis_button_preferred_4"></a>
+                    <a class="addthis_button_compact"></a>
+                    <a class="addthis_counter addthis_bubble_style"></a>
+                    </div>
+                    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-509855127a47b45c"></script>
+                    <!-- AddThis Button END -->
+                </div>
             </div> <!-- end of inner-footer -->
         </footer>
 
